@@ -1,0 +1,256 @@
+/* ---------------- Overall Layout ---------------- */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9fafb; /* simple clean off-white */
+  padding: 40px 24px;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  gap: 28px;
+}
+
+/* ---------------- Main Content Wrapper ---------------- */
+.profile-main {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ---------------- Profile Card (Left) ---------------- */
+.profile-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 28px;
+  width: 340px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+}
+
+.profile-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto 12px auto;
+  object-fit: cover;
+  border: 4px solid #e5e7eb;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
+  background: none;
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.student-name {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.enrollment {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.profile-details {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.profile-details p {
+  margin: 8px 0;
+}
+
+/* Guardian Section */
+.guardian-section {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f3f4f6;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.guardian-section h4 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ---------------- Risk/Info Card (Right) ---------------- */
+.risk-card {
+  background: #fff;
+  flex: 1;
+  min-width: 340px;
+  padding: 36px 32px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.08);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  transition: box-shadow 0.3s ease;
+}
+
+.risk-card:hover {
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.12);
+}
+
+.risk-card h3 {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+/* Risk Badges */
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-top: 14px;
+  text-transform: uppercase;
+  cursor: default;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+}
+
+.risk-badge:hover {
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.2);
+  transform: scale(1.05);
+}
+
+.risk-high-risk {
+  background: #dc2626; /* red-600 */
+  color: #fff;
+}
+
+.risk-medium-risk {
+  background: #f59e0b; /* amber-500 */
+  color: #fff;
+}
+
+.risk-low-risk {
+  background: #10b981; /* emerald-500 */
+  color: #fff;
+}
+
+.risk-safe {
+  background: #22c55e; /* green-600 */
+  color: #fff;
+}
+
+/* ---------------- Back Button ---------------- */
+.back-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 50px;
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.back-btn:hover {
+  background: #1e40af;
+  transform: scale(1.1);
+}
+
+
+/* ---------------- Modal ---------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 0.24);
+  text-align: center;
+}
+
+.close-modal-btn {
+  margin-top: 24px;
+  background: #dc2626;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 16px rgb(220 38 38 / 0.45);
+}
+
+.close-modal-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.08);
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card,
+  .risk-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .risk-badge {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+}

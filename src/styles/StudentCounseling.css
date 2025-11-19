@@ -1,0 +1,369 @@
+/* 🎨 Theme Variables */
+:root {
+  --primary: #2ecc71;
+  --primary-dark: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --text-dark: #222;
+  --text-light: #555;
+  --white: #fff;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ GLOBAL SETTINGS */
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 🎨 Layout */
+.counseling-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px;
+  min-height: 100vh;
+  background: var(--bg-light, #f7f7f7);
+  overflow: hidden;
+}
+
+.counseling-main {
+  flex: 1;
+  max-width: 1200px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 📊 Stats */
+.stats-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 140px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-box h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.stat-box p {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+/* 📈 Progress */
+.progress-section {
+  margin-bottom: 20px;
+}
+
+.progress-section p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  transition: width 0.4s ease;
+}
+
+/* 📋 Table Container */
+.table-container {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: var(--shadow);
+}
+
+/* 📑 Table Header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.table-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+/* 🔍 Search Box */
+.search-box input {
+  width: 220px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.25);
+}
+
+/* 🧾 Student Table */
+.table-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 60vh;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.student-table th,
+.student-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.student-table th {
+  background: #f9f9f9;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* ✅ Single Status Button (Cycles on click) */
+.status-btn.single-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 90px;
+  text-transform: capitalize;
+}
+
+/* 🎯 Status Color Variants */
+.status-btn.status-pending {
+  background-color: var(--warning);
+  color: white;
+}
+
+.status-btn.status-done {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.status-btn.status-overdue {
+  background-color: var(--danger);
+  color: white;
+}
+
+.status-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* 🚫 No Data Row */
+.no-data {
+  text-align: center;
+  padding: 15px;
+  color: var(--danger);
+  font-weight: bold;
+}
+
+/* 📝 Remark Button */
+.remark-btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.remark-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* 💬 Remark Input */
+.remark-input {
+  width: 90%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.remark-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(46, 204, 113, 0.4);
+}
+
+/* 📦 Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* 📜 Remarks History */
+.remark-history {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 12px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.remark-history li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  background: #f9f9f9;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border-left: 4px solid var(--primary);
+}
+
+.remark-history strong {
+  color: var(--primary-dark);
+}
+
+.no-remarks {
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+}
+
+/* ✍️ Input in Modal */
+.remark-input-box {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.remark-input-box input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.remark-input-box button {
+  padding: 6px 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ❌ Close Button */
+.close-btn {
+  background: var(--danger);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .stats-bar {
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .status-btn.single-btn {
+    min-width: unset;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
